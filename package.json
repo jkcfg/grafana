@@ -1,0 +1,34 @@
+{
+  "author": "The jk Authors",
+  "bugs": {
+    "url": "https://github.com/jkcfg/grafana/issues"
+  },
+  "dependencies": {},
+  "description": "Write grafana dashboards with TypeScript",
+  "devDependencies": {
+    "@jkcfg/std": "^0.2.7",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "typescript": "^3.4.3"
+  },
+  "homepage": "https://github.com/jkcfg/grafana#readme",
+  "keywords": [
+    "configuration",
+    "code",
+    "generation"
+  ],
+  "license": "Apache-2.0",
+  "main": "lib/grafana.mjs",
+  "name": "@jkcfg/grafana",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkcfg/grafana.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src",
+    "test": "npm run lint"
+  },
+  "version": "0.1.0"
+}

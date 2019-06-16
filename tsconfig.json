@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "outDir": "@jkcfg/grafana",
+    "pretty": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "stripInternal": true,
+    "target": "es2017"
+  },
+  "exclude": [
+    "node_modules",
+    "example"
+  ],
+  "include": [
+    "src"
+  ]
+}
