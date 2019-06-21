@@ -7,9 +7,11 @@
   "description": "Write grafana dashboards with TypeScript",
   "devDependencies": {
     "@jkcfg/std": "^0.2.7",
-    "eslint": "^5.9.0",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.4.1",
     "typescript": "^3.4.3"
   },
   "homepage": "https://github.com/jkcfg/grafana#readme",
@@ -27,7 +29,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint src",
+    "lint": "eslint src/**/*.ts",
     "test": "npm run lint"
   },
   "version": "0.1.0"

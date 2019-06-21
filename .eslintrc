@@ -1,13 +1,37 @@
 {
   "extends": "airbnb-base",
+  "plugins": ["eslint-plugin-jest"],
+  "settings": {
+     "import/resolver": {
+        "node": {
+          "paths": ["."]
+        }
+     }
+  },
+  "env": {
+    "jest/globals": true
+  },
+  "overrides": {
+    "files": [ "**/*.ts" ]
+  },
   "rules": {
+    "no-continue": 0,
+    "prefer-const": ["error", {"destructuring": "all"}],
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": [
       2,
       {
         "ignore": [
-          "^std$"
+          "^@jkcfg/.*$"
         ]
       }
-    ]
+    ],
+    "indent": ["error", 2, {"SwitchCase": 0, "CallExpression": {"arguments": "first"}, "FunctionDeclaration": {"parameters": "first"}}],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-shadow": 0,
+    "no-param-reassign": 0
   }
 }
+
