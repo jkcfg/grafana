@@ -8,6 +8,7 @@
   "devDependencies": {
     "@jkcfg/std": "^0.2.7",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.10.2",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
