@@ -1,0 +1,4 @@
+module:
+  name: grafana
+  description: Write grafana dashboards with TypeScript
+  version: 0.1.0
