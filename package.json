@@ -19,7 +19,7 @@
     "generation"
   ],
   "license": "Apache-2.0",
-  "main": "lib/grafana.mjs",
+  "module": "grafana.js",
   "name": "@jkcfg/grafana",
   "repository": {
     "type": "git",

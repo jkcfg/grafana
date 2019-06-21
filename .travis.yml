@@ -1,0 +1,17 @@
+cache: npm
+jobs:
+  include:
+  - name: lint
+    script: npm run lint
+    stage: Tests
+  - name: dist
+    script: make dist
+  - if: tag IS present
+    script:
+    - make dist
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > @jkcfg/kubernetes/.npmrc
+    - (cd @jkcfg/grafana && npm publish)
+    stage: Deploy
+language: node_js
+node_js:
+- node
