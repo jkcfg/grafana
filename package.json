@@ -6,15 +6,46 @@
   "dependencies": {},
   "description": "Write grafana dashboards with TypeScript",
   "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
     "@jkcfg/std": "^0.2.7",
+    "@types/jest": "^24.0.15",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.10.2",
+    "babel-jest": "^24.8.0",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jest": "^22.4.1",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.4.3"
   },
   "homepage": "https://github.com/jkcfg/grafana#readme",
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "ignoreCodes": [
+            151001
+          ]
+        }
+      }
+    },
+    "moduleDirectories": [
+      "\u003crootDir\u003e/node_modules"
+    ],
+    "modulePathIgnorePatterns": [
+      "\u003crootDir\u003e/@jkcfg/"
+    ],
+    "preset": "ts-jest/presets/js-with-babel",
+    "testMatch": [
+      "\u003crootDir\u003e/tests/*.test.js",
+      "\u003crootDir\u003e/tests/*.test.ts"
+    ],
+    "transformIgnorePatterns": [
+      "\u003crootDir\u003e/@jkcfg/"
+    ]
+  },
   "keywords": [
     "configuration",
     "code",
@@ -29,8 +60,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint src/**/*.ts",
-    "test": "npm run lint"
+    "lint": "eslint {src,tests}/**/*.ts",
+    "test": "jest"
   },
   "version": "0.1.0"
 }
