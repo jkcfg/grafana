@@ -4,6 +4,8 @@ jobs:
   - name: lint
     script: npm run lint
     stage: Tests
+  - name: unit tests
+    script: npm run test
   - name: dist
     script: make dist
   - if: tag IS present
