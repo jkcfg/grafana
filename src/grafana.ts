@@ -1,5 +1,6 @@
 import { Targetable } from './Mixins';
 import { Target } from './Target';
+import { Template } from './template';
 
 export class TimePicker {
   refresh_intervals = [
@@ -92,7 +93,7 @@ export class Prometheus {
 }
 
 class BaseGraph {
-  type: 'graph';
+  type = 'graph';
   title: string;
   span?: number;
   min_span?: number;
@@ -113,26 +114,24 @@ class BaseGraph {
   legend = new Legend();
   aliasColors = {};
   transparent = undefined;
-  yAxis = [
+  yaxis = [
     new YAxis(),
     new YAxis(),
   ];
-  xAxis = new XAxis();
+  xaxis = new XAxis();
   renderer = 'flot';
   dashLength = 10;
   spaceLength = 10;
   percentage = false;
-  steppedLine: false;
+  steppedLine = false;
   tooltip = {
     value_type: 'individual',
     shared: true,
     sort: 0,
   };
-  timeFrom: null;
-  timeShift: null;
-  seriesOverrides: [];
+  seriesOverrides = [];
   thresholds = [];
-  links: [];
+  links = [];
 
   targets: Target[];
   constructor(title, params?: Partial<BaseGraph>) {
@@ -147,6 +146,16 @@ export const Tooltip = {
   SHARED_CROSSHAIR: 1,
   SHARED_TOOLTIP: 2,
 };
+
+class List<T> {
+  list: T[];
+}
+
+function EmptyList<T>(): List<T> {
+  return {
+    list: [],
+  };
+}
 
 export class Dashboard {
   title: string;
@@ -163,17 +172,16 @@ export class Dashboard {
   schemaVersion = 16;
   uid = '';
   description?: string;
-  annotations = {
-    list: [],
-  };
-  gnetId: null;
-  id: null;
-  links: [];
+  annotations: List<object> = EmptyList<object>();
+  gnetId = null;
+  id = null;
+  links = [];
   time = {
     from: 'now-6h',
     to: 'now',
   };
-  version: 0;
+  version = 0;
+  templating: List<Template> = EmptyList<Template>();
 
   constructor(title, params?: Partial<Dashboard>) {
     Object.assign(this, { title }, params);
@@ -207,6 +215,11 @@ export class Dashboard {
     Dashboard.setPanelsId([panel], nextId);
     panel.gridPos = gridPos;
     this.panels.push(panel);
+    return this;
+  }
+
+  addTemplate(template: Template) {
+    this.templating.list.push(template);
     return this;
   }
 }

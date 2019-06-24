@@ -21,5 +21,6 @@ test('dashboards can be created', () => {
   expect(dashboard.panels.length).toBe(1);
 
   const panel = dashboard.panels[0];
+  expect(panel.type).toBe('graph');
   expect(panel.title).toBe(panelTitle);
 });
