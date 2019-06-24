@@ -92,7 +92,7 @@ export class Prometheus {
 }
 
 class BaseGraph {
-  type: 'graph';
+  type = 'graph';
   title: string;
   span?: number;
   min_span?: number;
