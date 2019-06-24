@@ -113,11 +113,11 @@ class BaseGraph {
   legend = new Legend();
   aliasColors = {};
   transparent = undefined;
-  yAxis = [
+  yaxis = [
     new YAxis(),
     new YAxis(),
   ];
-  xAxis = new XAxis();
+  xaxis = new XAxis();
   renderer = 'flot';
   dashLength = 10;
   spaceLength = 10;
