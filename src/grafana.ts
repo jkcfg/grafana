@@ -146,6 +146,16 @@ export const Tooltip = {
   SHARED_TOOLTIP: 2,
 };
 
+class List<T> {
+  list: T[];
+}
+
+function EmptyList<T>(): List<T> {
+  return {
+    list: [],
+  };
+}
+
 export class Dashboard {
   title: string;
 
@@ -161,9 +171,7 @@ export class Dashboard {
   schemaVersion = 16;
   uid = '';
   description?: string;
-  annotations = {
-    list: [],
-  };
+  annotations: List<object> = EmptyList<object>();
   gnetId = null;
   id = null;
   links = [];
@@ -172,7 +180,7 @@ export class Dashboard {
     to: 'now',
   };
   version = 0;
-  templating: Template[] = [];
+  templating: List<Template> = EmptyList<Template>();
 
   constructor(title, params?: Partial<Dashboard>) {
     Object.assign(this, { title }, params);
