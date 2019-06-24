@@ -122,17 +122,15 @@ class BaseGraph {
   dashLength = 10;
   spaceLength = 10;
   percentage = false;
-  steppedLine: false;
+  steppedLine = false;
   tooltip = {
     value_type: 'individual',
     shared: true,
     sort: 0,
   };
-  timeFrom: null;
-  timeShift: null;
-  seriesOverrides: [];
+  seriesOverrides = [];
   thresholds = [];
-  links: [];
+  links = [];
 
   targets: Target[];
   constructor(title, params?: Partial<BaseGraph>) {
@@ -166,14 +164,15 @@ export class Dashboard {
   annotations = {
     list: [],
   };
-  gnetId: null;
-  id: null;
-  links: [];
+  gnetId = null;
+  id = null;
+  links = [];
   time = {
     from: 'now-6h',
     to: 'now',
   };
-  version: 0;
+  version = 0;
+  templating: Template[] = [];
 
   constructor(title, params?: Partial<Dashboard>) {
     Object.assign(this, { title }, params);
