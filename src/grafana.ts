@@ -1,5 +1,6 @@
 import { Targetable } from './Mixins';
 import { Target } from './Target';
+import { Template } from './template';
 
 export class TimePicker {
   refresh_intervals = [
@@ -214,6 +215,11 @@ export class Dashboard {
     Dashboard.setPanelsId([panel], nextId);
     panel.gridPos = gridPos;
     this.panels.push(panel);
+    return this;
+  }
+
+  addTemplate(template: Template) {
+    this.templating.list.push(template);
     return this;
   }
 }
