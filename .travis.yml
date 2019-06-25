@@ -11,7 +11,7 @@ jobs:
   - if: tag IS present
     script:
     - make dist
-    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > @jkcfg/kubernetes/.npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > @jkcfg/grafana/.npmrc
     - (cd @jkcfg/grafana && npm publish)
     stage: Deploy
 language: node_js
