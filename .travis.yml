@@ -12,7 +12,7 @@ jobs:
     script:
     - make dist
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > @jkcfg/grafana/.npmrc
-    - (cd @jkcfg/grafana && npm publish)
+    - (cd @jkcfg/grafana && npm publish --access public)
     stage: Deploy
 language: node_js
 node_js:
